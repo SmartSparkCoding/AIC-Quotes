@@ -8,6 +8,9 @@ quotes = [
     {"id": 1, "quote": "I don't play golf.", "character": "Inspector", "act": 1}
 ]
 
+def errorResponse():
+    return jsonify({"quote": "Something went wrong. Check your request and try again.", "character": "Something went wrong. Check your request and try again.", "act": "Something went wrong. Check your request and try again."})
+
 def getQuoteNum():
     return random.randint(0, len(quotes) - 1)
 
@@ -29,6 +32,8 @@ def getQuote():
     if filter == 'character':
         character = request.args.get('character')
         find_quotes = [quote for quote in quotes if quote['character'] == character]
+        if not find_quotes:
+            return errorResponse()
         num_quote_select = random.randint(0, len(find_quotes) - 1)
         quote_select = find_quotes[num_quote_select]
         quote = quote_select['quote']
@@ -38,6 +43,8 @@ def getQuote():
     elif filter == 'act':
         act = request.args.get('act')
         find_quotes = [quote for quote in quotes if quote['act'] == int(act)]
+        if not find_quotes: 
+            return errorResponse()
         num_quote_select = random.randint(0, len(find_quotes) - 1)
         quote_select = find_quotes[num_quote_select]
         quote = quote_select['quote']
@@ -45,8 +52,8 @@ def getQuote():
         act = quote_select['act']
         return jsonify({"quote": quote, "character": character, "act": act})
     else:
-        return jsonify({"quote": "Invalid filter. Quote not found.", "character": "Invalid filter. Character not found.", "act": "Invalid filter. Act not found."})
-    
+        return errorResponse()
+
 
 if __name__ == '__main__':
     app.run(port=1234)
