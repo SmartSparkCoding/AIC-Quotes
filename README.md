@@ -41,4 +41,4 @@ The following will test various features and fallbacks of the API:
 5. On Mac or Linux, run `source .venv/bin/activate`. On Windows, run `.venv\Scripts\activate`
 6. On Mac or Linux, run `python3 -m pip install Flask`. On Windows, run `python -m pip install Flask`
 7. On Mac or Linux, run `python3 app.py`. On Windows, run `python app.py` 
-8. P
+8. The site is live, locally! Open in your browser: `localhost:1234/` and the site will appear (with the API running too :) )
