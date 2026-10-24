@@ -19,7 +19,7 @@
       <h3>Here you can find key information on how to use this API!</h3>
       <div id="docs-content">
         <h2>Main Endpoint</h2>
-        <p><strong>/quote</strong></p>
+        <h3><strong>/quote</strong></h3>
         <p>
           This is the main endpoint for all quotes. By using this endpoint
           without any parameters, the API will randomly select a quote and serve
@@ -40,7 +40,7 @@
       </div>
       <div id="docs-content">
         <h2>Parameters</h2>
-        <p><strong>?filter={FILTER HERE}</strong></p>
+        <h3><strong>?filter={FILTER HERE}</strong></h3>
         <p>
           In this case, you <strong>NEED</strong> this at the start of the
           parameter, to tell the API what filter to apply.
@@ -61,13 +61,17 @@
             "inspector", "arthur", "sybil", "sheila", "gerald" and "eric".
           </li>
         </ul>
-        <p><strong>?filter=act&act={act here}</strong></p>
+        <h3>
+          <p><strong>?filter=act&act={act here}</strong></p>
+        </h3>
         <p>
           This is pretty simple! Just put this after "/quote", and replace act
           here with your chosen act, from Act 1 to Act 3.
         </p>
         <p>This will choose a random quote, from your specified act.</p>
-        <p><strong>?filter=character&character={character here}</strong></p>
+        <h3>
+          <p><strong>?filter=character&character={character here}</strong></p>
+        </h3>
         <p>
           This is also decently simple. Just put this after "/quote", and
           replace "character here" with your chosen character!
