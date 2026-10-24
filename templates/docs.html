@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>AIC Quotes | Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for ('static', filename='styles.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="intro">
+      <h1 class="oswald-600">AIC Quotes Documentation</h1>
+      <h3>Here you can find key information on how to use this API!</h3>
+      <div id="docs-content">
+        <h2>Main Endpoint</h2>
+        <p><strong>/quote</strong></p>
+        <p>
+          This is the main endpoint for all quotes. By using this endpoint
+          without any parameters, the API will randomly select a quote and serve
+          it to you.
+        </p>
+        <p>
+          The response to this API route (including all parameters) will be a
+          JSON object containing the quote, act and character.
+        </p>
+        <p>Example response:</p>
+        <pre>
+            {
+                "act": 3,
+                "character": "inspector",
+                "quote": "We don't live alone. We are responsible for each other."
+            }
+        </pre>
+      </div>
+      <div id="docs-content">
+        <h2>Parameters</h2>
+        <p><strong>?filter={FILTER HERE}</strong></p>
+        <p>
+          In this case, you <strong>NEED</strong> this at the start of the
+          parameter, to tell the API what filter to apply.
+        </p>
+        <p>
+          There are 2 filters available, and you enter these in the area after
+          the `-`:
+        </p>
+        <ul>
+          <li>
+            <strong>act</strong> - you can use this to filter the act. As per
+            the book, there are three acts in An Inspector Calls. Use the
+            numbers, 1, 2 or 3.
+          </li>
+          <li>
+            <strong>character</strong> - you can use this to filter the
+            character. You can use the names of the characters. They are:
+            "inspector", "arthur", "sybil", "sheila", "gerald" and "eric".
+          </li>
+        </ul>
+        <p><strong>?filter=act&act={act here}</strong></p>
+        <p>
+          This is pretty simple! Just put this after "/quote", and replace act
+          here with your chosen act, from Act 1 to Act 3.
+        </p>
+        <p>This will choose a random quote, from your specified act.</p>
+        <p><strong>?filter=character&character={character here}</strong></p>
+        <p>
+          This is also decently simple. Just put this after "/quote", and
+          replace "character here" with your chosen character!
+        </p>
+        <p>
+          The API will randomly then return a quote from your specified
+          character.
+        </p>
+        <p>The characters you can use are (case sensitive):</p>
+        <ul>
+          <li>inspector</li>
+          <li>arthur</li>
+          <li>sybil</li>
+          <li>sheila</li>
+          <li>gerald</li>
+          <li>eric</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

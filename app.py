@@ -4,8 +4,8 @@ import random
 app = Flask(__name__)
 
 quotes = [
-    {"id": 0, "quote": "We don't live alone. We are responsible for each other.", "character": "Inspector", "act": 3},
-    {"id": 1, "quote": "I don't play golf.", "character": "Inspector", "act": 1}
+    {"id": 0, "quote": "We don't live alone. We are responsible for each other.", "character": "inspector", "act": 3},
+    {"id": 1, "quote": "I don't play golf.", "character": "inspector", "act": 1}
 ]
 
 def errorResponse():
